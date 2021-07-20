@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Document</title>
+    <style>
+        *{padding:0; margin:0; }
+        h1,h2,h3,h4,h5,h6{padding:0; margin:0; }
+        .sidebar-shrink{
+            height:100%; 
+            /* overflow-y: auto; */
+            background: #000; 
+        }
+
+        .magic-container .sidebar-left-nav{
+            width : 300px;
+            -webkit-transition : all .3s;
+            transition : all .3s;
+            position : fixed;
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0);
+            left : 0;
+            top : 0;
+            height : 100%;
+            z-index: 1000; 
+        }
+
+        body.sidebar-open .sidebar-left-nav {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0);
+            }
+
+        body.sidebar-open .col-md-10{
+            -webkit-transform: translateX(300px);
+            -moz-transform: translateX(300px);
+            -ms-transform: translateX(300px);
+            -o-transform: translateX(300px);
+            transform: translateX(300px);
+        }
+
+        .magic-container .col-md-10 {
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="magic-container" style="display:flex; ">
+        <div class="sidebar-left-nav sidebar">
+            <div class="sidebar-shrink">
+                <ul>
+                    <li>test1</li>
+                    <li>test2</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="virtual-box" style="width:300px; "> -->
+
+        </div>
+        <div class="contents" style="padding-left:300px; ">
+            <div class="header" style="background-color: pink; ">
+                <h3 class="headline-primary">
+                    <i class="fa fa-bars pull-left menu-toggle" aria-hidden="true"></i>
+                     Header 
+               </h3>
+            </div>   
+            <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.fa-bars').on('click', function clickHandler(e) {
+                // alert(1);
+                e.preventDefault();
+                $('body').toggleClass('sidebar-open');
+            });
+        });
+    </script>
+</body>
+</html>
