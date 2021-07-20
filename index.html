@@ -34,25 +34,37 @@
         }
 
         body.sidebar-open .sidebar-left-nav {
-            -webkit-transform: translateX(0);
-            -moz-transform: translateX(0);
-            -ms-transform: translateX(0);
-            -o-transform: translateX(0);
-            transform: translateX(0);
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+            transform: translateX(-100%);
             }
 
-        body.sidebar-open .col-md-10{
+        /* body.sidebar-open .col-md-10{
             -webkit-transform: translateX(300px);
             -moz-transform: translateX(300px);
             -ms-transform: translateX(300px);
             -o-transform: translateX(300px);
             transform: translateX(300px);
-        }
-
+        } */
+/* 
         .magic-container .col-md-10 {
             -webkit-transition: all 0.3s;
             transition: all 0.3s;
             width: 100%;
+        } */
+
+        .contents{
+            -webkit-transition : all .3s;
+            transition : all .3s;
+            padding-left: 300px; 
+        }
+        /*휴대폰 크기에서 가상공간 없애기*/
+       .contents-close{
+            -webkit-transition : all .3s;
+            transition : all .3s;
+            padding-left:0px; 
         }
     </style>
 </head>
@@ -69,7 +81,7 @@
         <!-- <div class="virtual-box" style="width:300px; "> -->
 
         </div>
-        <div class="contents" style="padding-left:300px; ">
+        <div class="contents">
             <div class="header" style="background-color: pink; ">
                 <h3 class="headline-primary">
                     <i class="fa fa-bars pull-left menu-toggle" aria-hidden="true"></i>
@@ -77,7 +89,7 @@
                </h3>
             </div>   
             <div class="content">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                contents
             </div>
         </div>
     </div>
@@ -87,6 +99,7 @@
                 // alert(1);
                 e.preventDefault();
                 $('body').toggleClass('sidebar-open');
+                $('.contents').toggleClass('contents-close');
             });
         });
     </script>
