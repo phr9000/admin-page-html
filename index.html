@@ -112,28 +112,28 @@
         </div>
     </div>
     <script>
-        $(function(){
-            // $('.fa-bars').on('click', function clickHandler(e) {
-            //     // // alert(1);
-            //     // e.preventDefault();
-            //     // $('body').toggleClass('sidebar-open');
-            //     // $('.contents').toggleClass('contents-close');
-            // });
+        $(function () {
 
-            $(window).on('resize',function(){
-                if($(this).width() < 768){
-                    $('body').addClass('sidebar-open');
-                    $('.contents').addClass('contents-close');
-                    $('.fa-bars').addClass('appear');
-                    // return; 
-                }else{
-                    // alert('768보다 큼');
-                    $('body').removeClass('sidebar-open');
-                    $('.contents').removeClass('contents-close');
-                    $('.fa-bars').removeClass('appear');
-                }
-            });
-        });
+            //1) create a function 
+                    var handleMatchMedia = function(md) {
+                        if (md.matches) {
+                            $('body').addClass('sidebar-open');
+                            $('.contents').addClass('contents-close');
+                            $('.fa-bars').addClass('appear');
+                        } else {
+                            $('body').removeClass('sidebar-open');
+                            $('.contents').removeClass('contents-close');
+                            $('.fa-bars').removeClass('appear');
+                        }
+                    }
+                    var mq = window.matchMedia("(max-width: 500px)");
+
+            // 2) call the function
+                    handleMatchMedia(mq);
+
+            //3) call the addListener function  
+                    mq.addListener(handleMatchMedia);
+                });
     </script>
 </body>
 </html>

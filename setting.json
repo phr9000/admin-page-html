@@ -1,0 +1,79 @@
+{
+
+    ​
+    
+        "vetur.format.styleInitialIndent": true,
+    
+        
+    
+        "vetur.format.scriptInitialIndent": true,
+    
+        
+    
+        "vetur.format.options.useTabs": true,
+    
+        
+    
+        "vetur.validation.templateProps": true,
+    
+        
+    
+        "[json]": {
+    
+        
+    
+        
+    
+        "editor.quickSuggestions": {
+    
+        
+    
+        "strings": true
+    
+        
+    
+        },
+    
+        
+    
+        "editor.suggest.insertMode": "replace",
+    
+        
+    
+        "gitlens.codeLens.scopes": [
+    
+        
+    
+        "document"
+    
+        
+    
+        ]
+    
+        
+    
+        },
+    
+        
+    
+        "editor.codeActionsOnSave": {
+    
+        
+    
+        "source.fixAll.eslint": true
+    
+        
+    
+        },
+    
+        
+    
+        "editor.formatOnSave": true,
+    
+        
+    
+        "editor.formatOnType": true
+    
+        
+    
+        }
