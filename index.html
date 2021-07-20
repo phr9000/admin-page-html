@@ -56,16 +56,32 @@
         } */
 
         .contents{
-            -webkit-transition : all .3s;
+            -webkit-transition : all .8s;
             transition : all .3s;
             padding-left: 300px; 
         }
         /*휴대폰 크기에서 가상공간 없애기*/
        .contents-close{
-            -webkit-transition : all .3s;
+            -webkit-transition : all .8s;
             transition : all .3s;
             padding-left:0px; 
         }
+
+        /*모바일 버튼 영역*/
+        .fa-bars{
+            -webkit-transition : all .3s;
+            transition : all .3s;
+            display:none; 
+            padding:0 3px; 
+        }
+
+        .appear{
+            -webkit-transition : all .3s;
+            transition : all .3s;
+            display:block; 
+        }
+
+
     </style>
 </head>
 <body>
@@ -83,10 +99,12 @@
         </div>
         <div class="contents">
             <div class="header" style="background-color: pink; ">
-                <h3 class="headline-primary">
-                    <i class="fa fa-bars pull-left menu-toggle" aria-hidden="true"></i>
-                     Header 
-               </h3>
+                <div style="padding: 5px; ">
+                    <h3 class="headline-primary">
+                        <i class="fa fa-bars pull-left menu-toggle" aria-hidden="true"></i>
+                        Header 
+                    </h3>
+                </div>
             </div>   
             <div class="content">
                 contents
@@ -95,11 +113,25 @@
     </div>
     <script>
         $(function(){
-            $('.fa-bars').on('click', function clickHandler(e) {
-                // alert(1);
-                e.preventDefault();
-                $('body').toggleClass('sidebar-open');
-                $('.contents').toggleClass('contents-close');
+            // $('.fa-bars').on('click', function clickHandler(e) {
+            //     // // alert(1);
+            //     // e.preventDefault();
+            //     // $('body').toggleClass('sidebar-open');
+            //     // $('.contents').toggleClass('contents-close');
+            // });
+
+            $(window).on('resize',function(){
+                if($(this).width() < 768){
+                    $('body').addClass('sidebar-open');
+                    $('.contents').addClass('contents-close');
+                    $('.fa-bars').addClass('appear');
+                    // return; 
+                }else{
+                    // alert('768보다 큼');
+                    $('body').removeClass('sidebar-open');
+                    $('.contents').removeClass('contents-close');
+                    $('.fa-bars').removeClass('appear');
+                }
             });
         });
     </script>
