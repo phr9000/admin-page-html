@@ -52,7 +52,7 @@
             z-index: 1000; 
         }
 
-        body.sidebar-open .sidebar-left-nav {
+        body.sidebar-close .sidebar-left-nav {
             -webkit-transform: translateX(-100%);
             -moz-transform: translateX(-100%);
             -ms-transform: translateX(-100%);
@@ -136,11 +136,11 @@
             //1) create a function 
                     var handleMatchMedia = function(md) {
                         if (md.matches) {
-                            $('body').addClass('sidebar-open');
+                            $('body').addClass('sidebar-close');
                             $('.contents').addClass('contents-close');
                             $('.fa-bars').addClass('appear');
                         } else {
-                            $('body').removeClass('sidebar-open');
+                            $('body').removeClass('sidebar-close');
                             $('.contents').removeClass('contents-close');
                             $('.fa-bars').removeClass('appear');
                         }
